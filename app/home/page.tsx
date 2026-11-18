@@ -8,6 +8,8 @@ export default function HomePage() {
   const router = useRouter();
   const [userName, setUserName] = useState("");
 
+  const [completedLessons, setCompletedLessons] = useState<string[]>([]);
+
   useEffect(() => {
     const name = localStorage.getItem("userName");
     if (!name) {
@@ -15,6 +17,12 @@ export default function HomePage() {
       return;
     }
     setUserName(name);
+    try {
+      const completed = JSON.parse(localStorage.getItem("completedLessons") || "[]");
+      setCompletedLessons(completed);
+    } catch {
+      setCompletedLessons([]);
+    }
     logPageView(
       localStorage.getItem("userId") || "anonymous",
       sessionStorage.getItem("sessionId") || "",
@@ -33,13 +41,7 @@ export default function HomePage() {
     router.push(path);
   };
 
-  // Track completed lessons
-  const getProgress = () => {
-    const completed = JSON.parse(localStorage.getItem("completedLessons") || "[]");
-    return completed;
-  };
 
-  const completedLessons = getProgress();
 
   const lessons = [
     {
