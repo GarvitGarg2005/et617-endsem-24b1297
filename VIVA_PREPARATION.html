@@ -1,0 +1,107 @@
+<h1>🎯 ET 617 Comprehensive Viva Voce Preparation Guide (Roll No: 24B1297)</h1>
+<h2>Identity Token &amp; Exam Card</h2>
+<ul>
+<li><strong>Roll No:</strong> 24B1297</li>
+<li><strong>Problem (P):</strong> P2 — Contextual Language &amp; Literacy Application</li>
+<li><strong>Topic (T):</strong> T10 — Hindi for Bhojpuri-speaking learners: श/स and ड़</li>
+<li><strong>Learner Context (L):</strong> L1 — Class 6–8 rural govt school student, parent&#39;s phone, 30 min/evening</li>
+<li><strong>Constraint (C):</strong> C2 — Learner&#39;s own language (Hindi native UI + bilingual English toggle)</li>
+<li><strong>Live App:</strong> <a href="https://et617-24b1297.vercel.app">https://et617-24b1297.vercel.app</a></li>
+<li><strong>Repo:</strong> <a href="https://github.com/GarvitGarg2005/et617-endsem-24b1297">https://github.com/GarvitGarg2005/et617-endsem-24b1297</a></li>
+</ul>
+<hr>
+<h2>PART 1: The Live Walkthrough (Examiner Task 1)</h2>
+<p>The examiner will ask: <em>&quot;Show the correct path and the misconception path on the live app.&quot;</em></p>
+<h3>1. Show the Correct Path (Mastery Scenario):</h3>
+<ol>
+<li>Go to <code>https://et617-24b1297.vercel.app</code></li>
+<li>Enter student name <strong>&quot;रामू&quot; (Ramu)</strong> $\rightarrow$ Click <strong>&quot;🚀 शुरू करें!&quot;</strong>.</li>
+<li>Point out: The Dashboard loads a brand-new, isolated session for Ramu.</li>
+<li>Click <strong>&quot;अभ्यास करो&quot;</strong> (<code>/practice</code>).</li>
+<li>On Question 1: <em>&quot;___ेर — सही अक्षर चुनो (lion के लिए)&quot;</em> $\rightarrow$ Select <strong>&quot;शेर (श)&quot;</strong>.</li>
+<li><strong>What to highlight to examiner:</strong><ul>
+<li>Instant green positive feedback banner (<code>bg-green-100</code>).</li>
+<li>Explains semantic meaning: शेर = lion (jungle king).</li>
+<li>Telemetry logs an <code>answer_correct</code> event to Firebase.</li>
+</ul>
+</li>
+</ol>
+<h3>2. Show the Misconception Path (Bhojpuri Interference Scenario):</h3>
+<ol>
+<li>Reset or advance to a question with a common Bhojpuri misconception (e.g. Q1 picking <strong>&quot;सेर&quot;</strong>, or Q3 picking <strong>&quot;लडका&quot;</strong> without nukta).</li>
+<li><strong>What to highlight to examiner:</strong><ul>
+<li>The app <strong>does not punish</strong> the student with a generic red cross.</li>
+<li>Instead, it displays the specific <strong>Bhojpuri Scaffolding Card</strong>:<br><em>&quot;💡 भोजपुरी संदर्भ: भोजपुरी में श और स एक जैसे सुनाई देते हैं, यह स्वाभाविक है! लेकिन मानक हिंदी में शेर (lion) में &#39;श&#39; आता है। &#39;सेर&#39; नाप-तौल की पुरानी इकाई है।&quot;</em></li>
+</ul>
+</li>
+<li>Now navigate to <strong>&quot;AI बातचीत अभ्यास&quot;</strong> (<code>/chat</code>):<ul>
+<li>Type or click the chip: <code>&quot;मैं सादी जा रहा हूँ&quot;</code> (Bhojpuri dialect for wedding).</li>
+<li><strong>Show the Design Challenge resolution:</strong> The AI attaches the badge <code>🗣️ भोजपुरी बोली पहचानी गई</code> (Bhojpuri Dialect Acknowledged).</li>
+<li>It tells the student: <em>&quot;यह आपकी बोली की मिठास है, गलत नहीं है! लेकिन स्कूल में लिखते समय &#39;शादी&#39; (wedding 💒) लिखना चाहिए।&quot;</em></li>
+<li>Contrast this with an actual error: Type <code>&quot;सक्ति&quot;</code> $\rightarrow$ The app tags it <code>✏️ वर्तनी सुधार</code> (Spelling Correction) and marks it as an error to be corrected.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2>PART 2: Why Question (Examiner Task 2)</h2>
+<p>The examiner will ask: <em>&quot;Explain one design decision tied to your persona or constraint.&quot;</em></p>
+<h3>Prepared Script to Deliver:</h3>
+<blockquote>
+<p><em>&quot;Sir/Ma&#39;am, our learner context is <strong>L1</strong> — Ramu, a 12-year-old Class 7 student in a rural government school in Ballia, UP, studying on his father&#39;s shared budget Android phone for 30 minutes in the evening.</em>  </p>
+<p><em>A critical design decision tied to his context was the <strong>dual-input scaffolding: an On-Screen Hindi Virtual Keyboard combined with clean Text-to-Speech audio synthesis</strong>.</em>  </p>
+<p><em>1. <strong>Why the On-Screen Keyboard:</strong> Most budget phones in rural households do not have Devanagari voice or typing keyboards properly configured in browser web views. Forcing the child to type complex conjuncts or nuktas on an English keyboard creates extraneous cognitive load (Sweller&#39;s Cognitive Load Theory). Our on-screen keyboard places the four target phonemes (<strong>श, स, ड़, ड</strong>) as prominent, one-tap buttons alongside common words like &#39;लड़का&#39; and &#39;सड़क&#39;.</em>  </p>
+<p><em>2. <strong>Why Speech Synthesis:</strong> In Bhojpuri, /ʃ/ and /s/ are acoustically merged into dental [s]. Reading alone cannot teach phonological contrast. By integrating auditory TTS alongside visual articulation models (palatal vs dental), Ramu hears the vocal tract placement directly, fulfilling Constraint C2 in the learner&#39;s own language.&quot;</em></p>
+</blockquote>
+<hr>
+<h2>PART 3: Live Change Request (Examiner Task 3)</h2>
+<p>The examiner gives one live code modification while watching your screen.</p>
+<h3>How to handle ANY change in seconds:</h3>
+<p>All learning content, questions, dialect patterns, and rules are isolated in:<br>📁 <code>lib/content.ts</code> (and <code>lib/speech.ts</code>)</p>
+<table>
+<thead>
+<tr>
+<th align="left">Possible Live Change Request</th>
+<th align="left">Exact File &amp; How to Change It</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><em>&quot;Add a new question to the practice quiz&quot;</em></td>
+<td align="left">Open <code>lib/content.ts</code> $\rightarrow$ Add an object to <code>PRACTICE_QUESTIONS</code> array.</td>
+</tr>
+<tr>
+<td align="left"><em>&quot;Change the feedback text for a misconception&quot;</em></td>
+<td align="left">Open <code>lib/content.ts</code> $\rightarrow$ Edit the <code>misconception</code> field in <code>PRACTICE_QUESTIONS</code>.</td>
+</tr>
+<tr>
+<td align="left"><em>&quot;Add a new Bhojpuri dialect word to the AI detector&quot;</em></td>
+<td align="left">Open <code>lib/content.ts</code> $\rightarrow$ Add <code>{ bhojpuri: &quot;...&quot;, hindi: &quot;...&quot;, context: &quot;...&quot; }</code> to <code>DIALECT_PATTERNS</code>.</td>
+</tr>
+<tr>
+<td align="left"><em>&quot;Change a button color or text label&quot;</em></td>
+<td align="left">Edit the respective page in <code>app/practice/page.tsx</code> or <code>app/chat/page.tsx</code>.</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>PART 4: Critical Self-Reflection (What couldn&#39;t be done vs. Future improvements)</h2>
+<h3>What couldn&#39;t be fully done in the 2-hour window:</h3>
+<ol>
+<li><strong>Full Automatic Speech Recognition (ASR / Voice-In):</strong><ul>
+<li>While we implemented spoken audio output (TTS), full speech-to-text recognition for accented Bhojpuri-Hindi dialect requires fine-tuned acoustic models (like AI4Bharat&#39;s IndicWav2Vec) which require high server infrastructure not feasible in a 2-hour frontend build.</li>
+</ul>
+</li>
+<li><strong>Offline Local Storage PWA Caching:</strong><ul>
+<li>While the app works on low data with no media over 1MB, full offline service worker caching for complete zero-internet usage was scoped out in favor of real-time Firebase telemetry.</li>
+</ul>
+</li>
+</ol>
+<h3>What can be done better in future iterations:</h3>
+<ol>
+<li><strong>Gamified Spaced Repetition (Leitner System):</strong><ul>
+<li>Re-testing words where Ramu previously exhibited Bhojpuri transfer after 24 and 48 hours to ensure long-term memory encoding (Atkinson-Shiffrin Model).</li>
+</ul>
+</li>
+<li><strong>Teacher Dashboard (C5 constraint pairing):</strong><ul>
+<li>Allowing the rural school teacher to view common classroom phoneme error clusters directly from the Firestore clickstream database.</li>
+</ul>
+</li>
+</ol>
