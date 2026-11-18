@@ -1,6 +1,6 @@
-# 🎓 ET 617 End-Semester Examination: Complete Submission Dossier
+# 🎓 ET 617 End-Semester Examination: Comprehensive Submission Report
 
-**Student Roll No:** 24B1297  
+**Student Roll No (ID Token):** 24B1297  
 **Date:** Wednesday, 18 November 2026 (6:00 PM – 9:00 PM)  
 **Course:** ET 617 - Educational Application Design (IIT Bombay)  
 **Instructor:** Prof. Ramkumar Rajendran  
@@ -9,12 +9,12 @@
 
 ## 1. Exam Identity Card Verification
 
-| Field | Chosen Option | Description & Rationale | Visible in App |
+| Field | Chosen Option | Educational Value & Context | Visible Implementation |
 | :--- | :--- | :--- | :--- |
-| **ID** | **24B1297** | Roll Number Token | Rendered on persistent footer of all screens & `/about` |
-| **P** | **P2** | Contextual Language & Literacy Application | Natural language dialogue, dialect variation diagnosis |
+| **ID** | **24B1297** | Roll Number Token | Permanent footer across all screens & `/about` |
+| **P** | **P2** | Contextual Language & Literacy Application | NLP conversational practice, dialect variation diagnosis |
 | **T** | **T10** | Hindi for Bhojpuri-speaking learners: श/स and ड़ | Contrasts palatal /ʃ/ vs dental /s/, and retroflex flap /ɽ/ |
-| **L** | **L1** | Class 6–8 rural govt school student, parent's phone, 30 min | Low cognitive load, bite-sized tasks, Devanagari keyboard |
+| **L** | **L1** | Class 6–8 rural govt school student, parent's phone, 30 min | Low cognitive load, bite-sized tasks, on-screen Devanagari keyboard |
 | **C** | **C2** | Learner's own language (Hindi native UI + English toggle) | Complete Hindi instructions with bilingual switch on lessons |
 
 * **Live Hosted Application:** 👉 [https://et617-24b1297.vercel.app](https://et617-24b1297.vercel.app)
@@ -25,13 +25,13 @@
 ## 2. Complete Deliverables (D1 – D8)
 
 ### D1 — Educational Problem Statement
-In rural Hindi-medium schools across eastern UP and Bihar, Bhojpuri-dominant learners face severe phonological interference when acquiring standard written Hindi (खड़ी बोली). In Bhojpuri phonology, the palatal fricative /ʃ/ (**श**) merges into the dental fricative /s/ (**स**), causing phonetic homophony. Simultaneously, the retroflex flap /ɽ/ (**ड़**), distinguished by a bottom *nukta*, is frequently merged with the un-nukta plosive [ɖ] (**ड**). Consequently, students conflate words with distinct semantic meanings (e.g. शेर [lion] vs सेर [measure]) and routinely omit the nukta in common words like लड़का and सड़क. Traditional educational tools either penalize regional dialect features as illiterate errors or fail to provide auditory contrast.
+In Hindi-medium schools across eastern Uttar Pradesh and Bihar, students whose primary home dialect is Bhojpuri encounter significant phonological and orthographic interference when learning standard Hindi (खड़ी बोली). In Bhojpuri phonology, the palatal fricative /ʃ/ (**श**) merges into the dental fricative /s/ (**स**), frequently merging both into [s]. Furthermore, the retroflex flap /ɽ/ (**ड़**), signified by the diacritic *nukta*, is often realized as the un-nukta retroflex plosive [ɖ] (**ड**). Consequently, students habitually replace "शेर" with "सेर" and omit the nukta in words like "सड़क" and "लड़का". Existing educational tools either penalize regional dialectal variations as ignorant mistakes or fail to provide auditory contrast. This application bridges that gap through situated contrastive analysis, auditory training, and culturally respectful AI scaffolding.
 
-* **Target Context:** A Class 7 student accessing the application on a parent's shared budget Android phone in the evening (15–20 minutes session).
+* **Context of Use:** A Class 7 student accessing the application on a parent's shared budget Android phone in the evening (15–20 minutes session) in a rural or semi-urban setting.
 * **Measurable Learning Outcomes:**
-  1. *Identify (पहचानना):* Given visual cues or speech prompts, the learner will correctly identify whether standard Hindi requires **श** or **स** with $\ge 85\%$ accuracy.
-  2. *Distinguish (अंतर करना):* The learner will explain the difference between acceptable oral dialectal variations (e.g., Bhojpuri "सादी") and formal standard orthography ("शादी").
-  3. *Apply (प्रयोग करना):* The learner will apply correct nukta orthography (**ड़**) and sibilant consonants (**श/स**) in sentence construction and communicative dialogue.
+  1. *Identify (पहचानना):* Given audio or text pairs, the learner will correctly identify whether standard Hindi requires palatal **श** or dental **स** with at least 85% accuracy.
+  2. *Distinguish (अंतर करना):* The learner will distinguish acceptable oral Bhojpuri dialect forms (e.g., "सादी", "सरम") from written orthographic errors, explaining why formal written Hindi necessitates standard spelling.
+  3. *Apply (प्रयोग करना):* In contextual sentence-completion and communicative dialogue with an AI tutor, the learner will apply the nukta rule for **ड़** and correct sibilant **श/स** in everyday vocabulary.
 
 ---
 
@@ -42,19 +42,20 @@ mindmap
   root((Ramu Kumar - Class 7))
     Demographics
       Age: 12
-      School: Govt. Upper Primary School, Ballia (UP)
+      Location: Ballia, Rural UP
+      School: Govt. Upper Primary School
       Home Tongue: Bhojpuri
       School Language: Hindi Medium
-    Technology
+    Technology & Environment
       Device: Father's shared Android phone
-      Data: 1.5 GB daily family cap
-      Usage Time: 25 min after farm work (6:30-7:00 PM)
+      Study Window: 25-30 min after 6:30 PM
+      Data: Low-bandwidth prepaid connection
     Core Misconceptions
-      M1: "श and स sound identical, so choice of letter does not change meaning."
+      M1: "श and स sound identical, so spelling does not change meaning."
       M2: "ड़ is just a decorative dot; writing लडका instead of लड़का is perfectly fine."
-    Learning Goals
-      Avoid ridicule during blackboard dictation
-      Pass Class 8 transition exam with high marks
+    Psychological Factors
+      Fear of ridicule during blackboard dictation
+      High motivation to succeed in Class 8 transition
 ```
 
 * **Prior Knowledge:** Mastered primary Devanagari consonants and vowels; can read simple textbook sentences.
@@ -66,15 +67,15 @@ mindmap
 ### D3 — Educational Content & Assessment Items
 
 The app implements a full structured pedagogical sequence:
-1. **Lesson 1:** श और स का अंतर (Palatal vs Dental articulation model + audio)
-2. **Lesson 2:** ड़ को पहचानो (Visual stop vs flap contrast + nukta rule)
+1. **Lesson 1:** श और स का अंतर (Palatal vs Dental interactive articulation model + clean TTS audio)
+2. **Lesson 2:** ड़ को पहचानो (Visual stop vs flap contrast + nukta rule + audio)
 3. **Lesson 3:** वाक्य में प्रयोग (Contextual sentence usage and Bhojpuri sociolinguistic notes)
 4. **Interactive Practice:** 8 items across 4 formats:
    * *MCQ (Semantic Contrast):* "___ेर" (lion) $\rightarrow$ शेर vs सेर.
-   * *Fill-in-the-Blank:* "मेरे ___दोसी बहुत अच्छे हैं।" (with on-screen Hindi keyboard).
+   * *Fill-in-the-Blank:* "मेरे ___दोसी बहुत अच्छे हैं।" (with on-screen Hindi Devanagari keyboard).
    * *True/False:* "शक्ति को सक्ति लिखना सही है।" (diagnoses Bhojpuri phonological transfer).
    * *Interactive Matching:* Pairs words (शेर, सेब, लड़की, शाम) to definitions.
-5. **AI Conversational Practice:** Natural language dialogue with real-time dialect recognition.
+5. **AI Conversational Practice:** Natural language dialogue with real-time dialect recognition and clean audio pronunciation.
 
 ---
 
@@ -86,13 +87,14 @@ The app implements a full structured pedagogical sequence:
                                         ├──> [/lesson/sentences (Lesson 3)]
                                         ├──> [/practice (8 Assessed Items)]
                                         ├──> [/chat (AI Conversational Tutor)]
-                                        ├──> [/results (Real-time Analytics)]
+                                        ├──> [/results (Isolated Analytics)]
                                         └──> [/about (Identity & Theories)]
 ```
 
 * **Constraint C2 Visible Implementation:** All screens operate primarily in authentic Devanagari Hindi. Lessons feature an accessible **`🌐 English में देखें`** toggle.
-* **Multimodal Scaffolding:** Each lesson includes an embedded **Interactive Phonetics Visualizer** displaying tongue-palate vocal tract placement and standalone **🔊 Audio Pronunciation Buttons**.
+* **Interactive Articulation Scaffolding:** Each lesson includes an embedded **Interactive Phonetics Visualizer** displaying tongue-palate vocal tract placement (`👅 ➔ 🏛️` vs `👅 ➔ 🦷`) and standalone **🔊 Audio Pronunciation Buttons**.
 * **Devanagari Input Scaffold:** An integrated **On-Screen Hindi Virtual Keyboard** enables one-tap input on touch devices, with fallback support for Latin transliterations (e.g. typing `padosi`).
+* **Multi-User Isolation & Logout:** Complete student session separation with persistent storage keys (`progress_<userId>`) and a top-level **लॉगआउट 🚪** button on `/home`.
 
 ---
 
@@ -137,11 +139,14 @@ Strict Devanagari rules               ▼
 
 ---
 
-### D7 — Pedagogical Rationale & Learning Theory Mapping
+### D7 — Pedagogical Rationale & Design Challenge Resolution
 
-1. **Bloom's Revised Taxonomy:** Progresses deliberately from *Remembering* (letter identification) to *Applying* (sentence completion) and *Analyzing* (dialect vs standard contrast).
-2. **Cognitive Load Theory (Sweller):** Low extraneous load via clean card layouts; germane load enhanced through contrastive visual pairings (ड vs ड़) and auditory mnemonics ("शेर शक्तिशाली है").
-3. **Sociolinguistic Asset-Based Pedagogy:** Treats the learner's native dialect (Bhojpuri) as a legitimate linguistic system rather than "broken Hindi", building self-efficacy and reducing language anxiety.
+### Resolution of P2 Design Challenge:
+> *"How will the application distinguish a learner's language errors from acceptable dialect or pronunciation variations? Show one example of each in your app."*
+
+* **Distinction Theory:** Grounded in sociolinguistic constructivism (Labov, 1972), dialectal speech represents systematic grammatical and phonological regularities of a language community, not cognitive deficits.
+* **Dialect Variation (Acceptable):** When Ramu writes `"सादी"` or `"सरम"`, the app classifies this under phonological transfer from Bhojpuri. The system explicitly validates the learner's identity: *"यह आपकी बोली की विशेषता है, गलत नहीं है!"* while teaching standard target register.
+* **Language Error (Correction Required):** When Ramu writes `"सक्ति"` instead of `"शक्ति"` in an assessment test, or omits the nukta writing `"सडक"`, this represents an orthographic failure that causes spelling demerits on standardized exams. The system classifies this as an error and provides explicit articulation and phonetic mnemonics.
 
 ---
 
@@ -152,7 +157,7 @@ Strict Devanagari rules               ▼
 
 ---
 
-## 3. Granular Git Version History (Addressing Rubric Criteria)
+## 3. Complete 11-Stage Version Control History
 
 | Commit Hash | Version | Description & Educational Milestones |
 | :--- | :--- | :--- |
@@ -164,16 +169,20 @@ Strict Devanagari rules               ▼
 | `132e04a` | **V6** | Compiled formatted standalone HTML evaluation report (`REPORT.html`) |
 | `6ce59cc` | **V7** | Integrated On-Screen Hindi Virtual Keyboard and dual-engine audio player |
 | `9446dda` | **V8** | Audio text-normalization (emoji/dash stripping) and Interactive Phonetics Visualizer |
+| `2943e07` | **V9** | Added comprehensive final submission dossier with D1-D8, viva guide, and version history |
+| `2a41760` | **V10** | Resolved speech audio engine and made visual phonetics model fully interactive |
+| `b3fb7af` | **V11** | Added student logout button and isolated per-user progress storage |
 
 ---
 
-## 4. Viva Voce Cheat Sheet (3 Key Questions Anticipated)
+## 4. Viva Voce Cheat Sheet (3 Key Tasks Anticipated)
 
-1. **Walkthrough:** 
-   * Demonstrate Scenario A (correct answer on `/practice` Q1).
-   * Demonstrate Scenario B (select "सेर" on Q1 to show the Bhojpuri misconception card, then type "सादी" in `/chat` to show the `🗣️ भोजपुरी बोली पहचानी गई` badge).
-2. **Why Question (Design Decision):** 
+1. **Walkthrough:**
+   * Open `/practice`, answer Question 1 correctly (`शेर`), show positive feedback.
+   * Go back and pick `सेर`, show the misconception card explaining Bhojpuri homophony.
+   * Open `/chat`, type *"मैं आज सादी में गया था"*, show the examiner the `🗣️ भोजपुरी बोली पहचानी गई` badge and respectful sociolinguistic feedback.
+2. **Why Question (Design Decision):**
    * *"Why did you include an on-screen Hindi keyboard and dual-engine audio?"*  
-   * **Answer:** *"Because our learner persona is Ramu, a Class 7 rural student on his father's phone. Most mobile web browsers lack a dedicated Devanagari input method, and since Bhojpuri merges /ʃ/ and /s/, auditory training via speech synthesis is required to distinguish vocal tract placement."*
-3. **Live Change Request Strategy:** 
+   * **Answer:** *"Our learner persona is Ramu, a Class 7 rural student on his father's phone. Most mobile browsers lack a dedicated Devanagari input method, and since Bhojpuri merges /ʃ/ and /s/, auditory training via speech synthesis is required to distinguish vocal tract placement."*
+3. **Live Change Request Strategy:**
    * Keep your local code open in VS Code. All lessons and questions are cleanly defined in `lib/content.ts`. Any text, option, or rule change requested by the examiner can be edited in seconds in `lib/content.ts`.
