@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { LESSONS } from "@/lib/content";
 import { logPageView, logEvent } from "@/lib/clickstream";
-import { speakHindi } from "@/lib/speech";
+import AudioButton from "@/components/AudioButton";
+import PhoneticsVisualizer from "@/components/PhoneticsVisualizer";
 
 export default function SentenceLesson() {
   const router = useRouter();
@@ -56,12 +57,11 @@ export default function SentenceLesson() {
           </button>
         </div>
 
-        <div className="bg-white rounded-2xl shadow p-6 mb-4">
-          <h1 className="text-2xl font-bold text-orange-800 mb-1">
-            📜 {lang === "hi" ? lesson.title : lesson.titleEn}
-          </h1>
-          <p className="text-orange-600 text-sm">{lang === "hi" ? lesson.subtitle : lesson.subtitleEn}</p>
-        </div>
+        {/* Visual Phonetics Model & Lesson Audio Demonstrator */}
+        <PhoneticsVisualizer
+          topic="sentences"
+          title={lang === "hi" ? "वाक्य उच्चारण एवं स्वर मॉडल" : "Sentence Phonetics Demonstrator"}
+        />
 
         <div className="bg-white rounded-2xl shadow p-6 mb-4">
           <h2 className="font-bold text-lg text-gray-800 mb-3">
@@ -92,13 +92,7 @@ export default function SentenceLesson() {
                   <p className="font-bold text-gray-900 text-base">{item.word}</p>
                   <p className="text-xs text-gray-500">{item.meaning} ({item.phonetic})</p>
                 </div>
-                <button
-                  onClick={() => speakHindi(item.word)}
-                  className="bg-orange-600 hover:bg-orange-700 active:scale-95 text-white p-2.5 rounded-full shadow transition-transform"
-                  title="उच्चारण सुनो"
-                >
-                  🔊
-                </button>
+                <AudioButton text={item.word} />
               </div>
             ))}
           </div>

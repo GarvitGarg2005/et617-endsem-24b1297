@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { LESSONS } from "@/lib/content";
 import { logPageView, logEvent } from "@/lib/clickstream";
-import { speakHindi } from "@/lib/speech";
+import AudioButton from "@/components/AudioButton";
+import PhoneticsVisualizer from "@/components/PhoneticsVisualizer";
 
 export default function ShaSaLesson() {
   const router = useRouter();
@@ -79,24 +80,11 @@ export default function ShaSaLesson() {
           <p className="text-blue-500 text-sm">{lang === "hi" ? lesson.subtitle : lesson.subtitleEn}</p>
         </div>
 
-        {/* Video Lecture / Visual Scaffold */}
-        <div className="bg-white rounded-2xl shadow p-4 mb-4">
-          <h2 className="font-bold text-base text-gray-800 mb-2">
-            🎬 {lang === "hi" ? "वीडियो व्याख्या (Visual Demo)" : "Video Explanation"}
-          </h2>
-          <div className="relative w-full rounded-xl overflow-hidden bg-black aspect-video">
-            <iframe
-              className="w-full h-full"
-              src={lesson.videoUrl}
-              title="Phonetics lesson"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-          <p className="text-xs text-gray-400 mt-2">
-            {lang === "hi" ? "💡 यदि वीडियो लोड न हो, तो नीचे ऑडियो और पाठ पढ़ें।" : "💡 Low-bandwidth fallback: text and speech buttons available below."}
-          </p>
-        </div>
+        {/* Visual Phonetics Model & Lesson Audio Demonstrator */}
+        <PhoneticsVisualizer
+          topic="sha-sa"
+          title={lang === "hi" ? "मुख आकृति एवं उच्चारण मॉडल (Phonetics Model)" : "Vocal Tract Articulation Model"}
+        />
 
         {/* Explanation */}
         <div className="bg-white rounded-2xl shadow p-6 mb-4">
@@ -160,16 +148,7 @@ export default function ShaSaLesson() {
                     <span className="text-xs font-bold bg-white rounded px-2 py-0.5">
                       {ex.letter}
                     </span>
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        speakHindi(ex.word);
-                      }}
-                      className="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-1 text-xs"
-                      title="उच्चारण सुनो"
-                    >
-                      🔊
-                    </button>
+                    <AudioButton text={ex.word} />
                   </div>
                 </div>
               ))}

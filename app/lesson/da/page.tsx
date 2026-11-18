@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { LESSONS } from "@/lib/content";
 import { logPageView, logEvent } from "@/lib/clickstream";
-import { speakHindi } from "@/lib/speech";
+import AudioButton from "@/components/AudioButton";
+import PhoneticsVisualizer from "@/components/PhoneticsVisualizer";
 
 export default function DaLesson() {
   const router = useRouter();
@@ -70,12 +71,11 @@ export default function DaLesson() {
           </button>
         </div>
 
-        <div className="bg-white rounded-2xl shadow p-6 mb-4">
-          <h1 className="text-2xl font-bold text-green-700 mb-1">
-            ✏️ {lang === "hi" ? lesson.title : lesson.titleEn}
-          </h1>
-          <p className="text-green-500 text-sm">{lang === "hi" ? lesson.subtitle : lesson.subtitleEn}</p>
-        </div>
+        {/* Visual Phonetics Model & Lesson Audio Demonstrator */}
+        <PhoneticsVisualizer
+          topic="da"
+          title={lang === "hi" ? "मुख आकृति एवं नुक्ता मॉडल (Phonetics Model)" : "Nukta Flap Articulation Model"}
+        />
 
         <div className="bg-white rounded-2xl shadow p-6 mb-4">
           <h2 className="font-bold text-lg text-gray-800 mb-3">📖 {lang === "hi" ? "समझो:" : "Concept:"}</h2>
@@ -152,16 +152,7 @@ export default function DaLesson() {
                     <span className="text-xs font-bold bg-white rounded px-2 py-0.5">
                       {ex.letter}
                     </span>
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        speakHindi(ex.word);
-                      }}
-                      className="bg-green-600 hover:bg-green-700 text-white rounded-full p-1 text-xs"
-                      title="उच्चारण सुनो"
-                    >
-                      🔊
-                    </button>
+                    <AudioButton text={ex.word} />
                   </div>
                 </div>
               ))}
