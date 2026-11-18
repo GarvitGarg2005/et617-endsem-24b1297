@@ -1,104 +1,100 @@
-<h1>ET 617 End-Semester Examination: Complete Educational Application Report</h1>
+<h1>ET 617 End-Semester Examination: Academic Evaluation Report</h1>
 <h2>Identity Card</h2>
 <table>
 <thead>
 <tr>
 <th align="left">Field</th>
-<th align="left">Specification</th>
-<th align="left">Implementation in Submission</th>
+<th align="left">Value</th>
+<th align="left">Source</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left"><strong>Roll Number (ID)</strong></td>
+<td align="left"><strong>Roll Number (ID Token)</strong></td>
 <td align="left">24B1297</td>
-<td align="left">Rendered visibly in the persistent footer of all screens &amp; on <code>/about</code></td>
+<td align="left">Student Identity</td>
 </tr>
 <tr>
 <td align="left"><strong>Problem Statement (P)</strong></td>
-<td align="left">P2: Contextual language and literacy application</td>
-<td align="left">NLP conversational practice, dialect distinction, spelling diagnosis</td>
+<td align="left">P2 — Contextual language and literacy application</td>
+<td align="left">Section 3</td>
 </tr>
 <tr>
 <td align="left"><strong>Topic Bank (T)</strong></td>
-<td align="left">T10: Hindi for Bhojpuri-speaking learners: श/स and ड़</td>
-<td align="left">Dedicated comparative curriculum addressing phoneme interference</td>
+<td align="left">T10 — Hindi for Bhojpuri-speaking learners: श/स and ड़</td>
+<td align="left">Section 4.1</td>
 </tr>
 <tr>
 <td align="left"><strong>Learner Context (L)</strong></td>
-<td align="left">L1: Class 6–8 rural govt school student, parent&#39;s phone, 30 min/evening</td>
-<td align="left">Persona: Ramu Kumar (Age 12, Ballia UP), bite-sized lessons, low cognitive load</td>
+<td align="left">L1 — Class 6–8 rural govt school student, parent&#39;s phone, 30 min</td>
+<td align="left">Section 4.2</td>
 </tr>
 <tr>
 <td align="left"><strong>Design Constraint (C)</strong></td>
-<td align="left">C2: Learner&#39;s own language</td>
-<td align="left">Full primary Devanagari UI with bilingual Hindi/English accessibility toggle</td>
-</tr>
-<tr>
-<td align="left"><strong>Hosting Deployment</strong></td>
-<td align="left">et617-24b1297.vercel.app</td>
-<td align="left">Active production deployment on Vercel</td>
-</tr>
-<tr>
-<td align="left"><strong>GitHub Repository</strong></td>
-<td align="left">et617-endsem-24b1297</td>
-<td align="left">Public repository with granular incremental commit history</td>
+<td align="left">C2 — Learner&#39;s own language (Hindi native UI + English toggle)</td>
+<td align="left">Section 4.3</td>
 </tr>
 </tbody></table>
+<ul>
+<li><strong>Live App URL:</strong> <a href="https://et617-24b1297.vercel.app">https://et617-24b1297.vercel.app</a>  </li>
+<li><strong>GitHub Repository:</strong> <a href="https://github.com/GarvitGarg2005/et617-endsem-24b1297">https://github.com/GarvitGarg2005/et617-endsem-24b1297</a></li>
+</ul>
 <hr>
-<h2>D1 — Educational Problem Statement</h2>
-<p>In Hindi-medium education across eastern Uttar Pradesh and Bihar, students whose primary home dialect is Bhojpuri encounter significant phonological and orthographic interference when learning standard Hindi (खड़ी बोली). Bhojpuri phonology typically does not distinguish between the palatal fricative /ʃ/ (<strong>श</strong>) and the dental fricative /s/ (<strong>स</strong>), frequently merging both into [s]. Furthermore, the retroflex flap /ɽ/ (<strong>ड़</strong>), signified by the diacritic <em>nukta</em>, is often realized as the un-nukta retroflex plosive [ɖ] (<strong>ड</strong>). Consequently, students habitually replace &quot;शेर&quot; with &quot;सेर&quot; and omit the nukta in words like &quot;सड़क&quot; and &quot;लड़का&quot;. Existing educational tools either penalize regional dialectal variations as ignorant mistakes or fail to provide auditory contrast. This application bridges that gap by situated contrastive analysis.</p>
-<p><strong>Context of Use:</strong> A Class 7 student accessing the application on a family Android smartphone in the evening for 15–20 minutes in a semi-urban/rural home setting with limited high-speed data.</p>
-<h3>Measurable Learning Outcomes (using action verbs):</h3>
-<ol>
-<li><strong>Identify (पहचानना):</strong> Given audio or text pairs, the learner will correctly identify whether standard Hindi requires palatal <strong>श</strong> or dental <strong>स</strong> with at least 85% accuracy.</li>
-<li><strong>Distinguish (अंतर करना):</strong> The learner will distinguish acceptable oral Bhojpuri dialect forms (e.g., &quot;सादी&quot;, &quot;सरम&quot;) from written orthographic errors, explaining why formal written Hindi necessitates standard spelling.</li>
-<li><strong>Apply (प्रयोग करना):</strong> In contextual sentence-completion and communicative dialogue with an AI tutor, the learner will apply the nukta rule for <strong>ड़</strong> and correct sibilant <strong>श/स</strong> in everyday vocabulary.</li>
+<h2>D1 — Educational Problem</h2>
+<p>In Hindi-medium education across eastern Uttar Pradesh and Bihar, students whose native dialect is Bhojpuri face persistent orthographic and phonological interference when learning standard written Hindi (खड़ी बोली). Bhojpuri phonology naturally merges the palatal fricative /ʃ/ (<strong>श</strong>) into the dental fricative /s/ (<strong>स</strong>), while the retroflex flap /ɽ/ (<strong>ड़</strong>), denoted by a bottom <em>nukta</em>, is commonly realized as the plosive [ɖ] (<strong>ड</strong>). Consequently, students habitually replace &quot;शेर&quot; with &quot;सेर&quot; and omit the nukta in essential vocabulary such as &quot;सड़क&quot; and &quot;लड़का&quot;, resulting in orthographic and semantic confusion during examinations. Existing digital tools either unfairly penalize regional dialectal features as illiterate errors or fail to provide auditory contrast.</p>
+<ul>
+<li><strong>Context of Use:</strong> A Class 7 student accessing the application on a parent&#39;s shared budget Android phone during a 20–30 minute evening study window in a rural home environment with modest data connectivity.</li>
+<li><strong>Measurable Learning Outcomes:</strong><ol>
+<li><em>Identify (पहचानना):</em> Given auditory or visual stimuli, the learner will correctly identify whether standard Hindi requires palatal <strong>श</strong> or dental <strong>स</strong> with at least 85% accuracy.</li>
+<li><em>Distinguish (अंतर करना):</em> The learner will distinguish acceptable oral Bhojpuri dialectal variations (e.g., &quot;सादी&quot;, &quot;सरम&quot;) from written orthographic errors, explaining why formal written Hindi requires standard spelling.</li>
+<li><em>Apply (प्रयोग करना):</em> The learner will apply the nukta rule for <strong>ड़</strong> and correct sibilant <strong>श/स</strong> in sentence construction and conversational dialogue.</li>
 </ol>
+</li>
+</ul>
 <hr>
 <h2>D2 — Learner Persona: Ramu Kumar</h2>
 <pre><code class="language-mermaid">mindmap
   root((Ramu Kumar - Class 7))
     Context
       Age: 12
-      Location: Ballia, Rural UP
-      Device: Father&#39;s shared budget Android phone
-      Study Window: 25-30 min after 6:30 PM
-    Linguistic Background
-      Home Dialect: Bhojpuri
+      School: Govt. Upper Primary School, Ballia (UP)
+      Home Language: Bhojpuri
       School Medium: Hindi
-      Strength: Strong oral communicative competence
+      Device: Father&#39;s shared budget Android phone
+      Study Time: 25-30 minutes in evening
+    Prior Knowledge
+      Reads primary Devanagari script fluently
+      Familiar with daily spoken Hindi vocabulary
     Specific Misconceptions
-      M1: &quot;श and स sound identical, so spelling does not matter&quot;
-      M2: &quot;ड़ is just stylistic; writing पडना instead of पढ़ना/पड़ना is acceptable&quot;
-    Psychological Factors
-      Fear of ridicule in class during blackboard dictation
-      High motivation to succeed in Class 8 board transition
+      M1: &quot;श and स sound identical, so spelling does not affect word meaning.&quot;
+      M2: &quot;ड़ is just a decorative accent; omitting the dot in लडका is acceptable.&quot;
+    Motivation &amp; Constraints
+      High aspiration to transition into Class 8 board exams
+      Anxiety regarding spelling mistakes during blackboard dictation
 </code></pre>
 <ul>
-<li><strong>Prior Knowledge:</strong> Can fluently read primary Devanagari script; familiar with common Hindi vocabulary.</li>
-<li><strong>Misconception 1 (M1):</strong> Believes that because &quot;शेर&quot; (lion) and &quot;सेर&quot; (measurement) sound near-identical in rural speech, using them interchangeably in written examinations is harmless.</li>
-<li><strong>Misconception 2 (M2):</strong> Believes that the nukta (dot) beneath &quot;ड़&quot; is an optional aesthetic accent rather than an essential phonemic marker distinguishing flap [ɽ] from plosive [ɖ].</li>
+<li><strong>Prior Knowledge:</strong> Strong oral communicative skills; basic mastery of Devanagari letters and primary matras.</li>
+<li><strong>Misconception 1 (M1):</strong> Believes that because &quot;शेर&quot; (lion) and &quot;सेर&quot; (unit of measure) sound indistinguishable in his regional speech, they are interchangeable in written school tasks.</li>
+<li><strong>Misconception 2 (M2):</strong> Believes the bottom dot (nukta) in &quot;ड़&quot; is an optional stylistic embellishment rather than an essential phonemic marker distinguishing flap [ɽ] from plosive [ɖ].</li>
 </ul>
 <hr>
-<h2>D3 — Educational Content Plan &amp; Learning Tasks</h2>
-<p>The instructional progression follows Bloom&#39;s Revised Taxonomy from recognition to contextual application:</p>
-<pre><code>[Lesson 1: श vs स (Phonetic distinction &amp; Audio articulation)]
-                     ↓
-[Lesson 2: ड़ vs ड (The Nukta Flap rule &amp; Visual contrast)]
-                     ↓
-[Lesson 3: वाक्य में प्रयोग (Sentence construction &amp; Dialect context)]
-                     ↓
-[Practice Module (MCQ, Fill-in-Blank, True/False, Matching)]
-                     ↓
-[AI Conversational Dialogue (Natural language interaction with feedback)]
-</code></pre>
-<h3>5+ Assessed Tasks Across 4 Formats:</h3>
+<h2>D3 — Educational Content Plan</h2>
+<h3>Instructional Design &amp; Scaffolding</h3>
+<p>The learning unit follows an instructional progression based on Bloom&#39;s Taxonomy:</p>
+<ol>
+<li><strong>Concept Explanation:</strong><ul>
+<li><em>Lesson 1 (श vs स):</em> Articulatory vocal tract differentiation (palatal vs dental) with clean spoken audio and interactive anatomical diagrams.</li>
+<li><em>Lesson 2 (ड़ vs ड):</em> Phonemic stop vs flap distinction and the position rule of the nukta (never at the start of a word).</li>
+<li><em>Lesson 3 (वाक्य प्रयोग):</em> Contextual sentence usage and sociolinguistic validation of dialect vs standard Hindi.</li>
+</ul>
+</li>
+</ol>
+<h3>Assessed Tasks Across 4 Formats:</h3>
 <ol>
 <li><strong>Task 1 (MCQ - Semantic Discrimination):</strong><ul>
 <li><em>Question:</em> &quot;___ेर&quot; — सही अक्षर चुनो (lion के लिए): [A] शेर (श) | [B] सेर (स)</li>
 <li><em>Model Answer:</em> शेर (श)</li>
 <li><em>Feedback for Correct:</em> &quot;✅ बिल्कुल सही! शेर 🦁 (lion) में &#39;श&#39; आता है।&quot;</li>
-<li><em>Feedback for M1:</em> &quot;⚠️ ध्यान दो! भोजपुरी में श और स एक जैसे सुनाई देते हैं, लेकिन &#39;शेर&#39; (जंगल का राजा) में तालव्य &#39;श&#39; आता है। &#39;सेर&#39; पुराने ज़माने की नाप है।&quot;</li>
+<li><em>Feedback for M1:</em> &quot;⚠️ ध्यान दो! भोजपुरी में श और स एक जैसे सुनाई देते हैं, लेकिन &#39;शेर&#39; (जंगल का राजा) में &#39;श&#39; आता है। &#39;सेर&#39; पुराने ज़माने की नाप है।&quot;</li>
 </ul>
 </li>
 <li><strong>Task 2 (Fill-in-the-Blank - Orthographic Precision):</strong><ul>
@@ -111,22 +107,25 @@
 <li><strong>Task 3 (True/False - Dialect Interference Evaluation):</strong><ul>
 <li><em>Question:</em> &quot;&#39;शक्ति&#39; को &#39;सक्ति&#39; लिखना सही है।&quot;</li>
 <li><em>Model Answer:</em> गलत (False)</li>
-<li><em>Feedback:</em> &quot;❌ गलत! भोजपुरी में &#39;सक्ति&#39; बोल सकते हैं, लेकिन मानक लिखित हिंदी में &#39;शक्ति&#39; (Power 💪) ही शुद्ध वर्तनी है।&quot;</li>
+<li><em>Feedback:</em> &quot;❌ गलत! भोजपुरी में &#39;सक्ति&#39; बोलना आम है, लेकिन मानक लिखित हिंदी में &#39;शक्ति&#39; (Power 💪) ही शुद्ध वर्तनी है।&quot;</li>
 </ul>
 </li>
 <li><strong>Task 4 (Interactive Matching - Cognitive Categorization):</strong><ul>
-<li><em>Left Pairs:</em> शेर, सेब, लड़की, शाम</li>
-<li><em>Right Pairs:</em> 🦁 lion, 🍎 apple, 👧 girl, 🌅 evening</li>
+<li><em>Pairs:</em> शेर $\leftrightarrow$ 🦁 lion, सेब $\leftrightarrow$ 🍎 apple, लड़की $\leftrightarrow$ 👧 girl, शाम $\leftrightarrow$ 🌅 evening.</li>
 </ul>
 </li>
-<li><strong>Task 5 (Communicative Production in Chat):</strong><ul>
-<li><em>Prompt:</em> &quot;मुझे बताओ, शाम को तुम क्या करते हो?&quot;</li>
-<li><em>Target Evaluation:</em> Check whether learner produces &#39;शाम&#39; or dialect &#39;साम&#39;, and &#39;सड़क&#39; or &#39;सडक&#39;.</li>
+<li><strong>Task 5 (Communicative Production in AI Chat):</strong><ul>
+<li>Real-time sentence production with on-screen Hindi keyboard and automated dialect evaluation.</li>
 </ul>
 </li>
 </ol>
 <hr>
-<h2>D4 — Working Application Architecture &amp; Navigation Map</h2>
+<h2>D4 — Working Application</h2>
+<ul>
+<li><strong>Production URL:</strong> <a href="https://et617-24b1297.vercel.app">https://et617-24b1297.vercel.app</a>  </li>
+<li><strong>Identity Token:</strong> <code>24B1297</code> displayed on the persistent footer of all screens and on <code>/about</code>.</li>
+</ul>
+<h3>Application Screen Map</h3>
 <pre><code>                    ┌─────────────────────────┐
                     │      / (Welcome)        │
                     │ Name input &amp; Session ID │
@@ -134,101 +133,115 @@
                                  │
                     ┌────────────▼────────────┐
                     │      /home (Hub)        │
-                    │ Progress checkmarks     │
+                    │ Per-user progress       │
+                    │ Student Logout button   │
                     └──────┬───────────┬──────┘
                            │           │
          ┌─────────────────┴───┐       └─────────────────────┐
          ▼                     ▼                             ▼
 ┌──────────────────┐  ┌──────────────────┐         ┌──────────────────┐
 │ /lesson/sha-sa   │  │ /lesson/da       │         │ /chat            │
-│ Video, Audio TTS │  │ Visual nukta     │         │ Gemini AI Tutor  │
-│ English toggle   │  │ Audio comparison │         │ Dialect badge    │
+│ Interactive Model│  │ Stop vs Flap model│        │ Gemini AI Tutor  │
+│ Clean TTS Audio  │  │ Clean TTS Audio  │         │ Dialect badge    │
+│ English toggle   │  │ English toggle   │         │ Hindi Keyboard   │
 └────────┬─────────┘  └────────┬─────────┘         └──────────────────┘
          │                     │
          └───────────┬─────────┘
                      ▼
            ┌──────────────────┐
            │ /lesson/sentences│
-           │ Context sentences│
+           │ Sentence context │
            └─────────┬────────┘
                      ▼
            ┌──────────────────┐
            │ /practice        │
            │ 4 Question types │
+           │ Hindi Keyboard   │
            └─────────┬────────┘
                      ▼
            ┌──────────────────┐
            │ /results         │
-           │ Analytics &amp; tips │
+           │ User analytics   │
            └──────────────────┘
 </code></pre>
 <ul>
-<li><strong>Live Deployment:</strong> <a href="https://et617-24b1297.vercel.app">https://et617-24b1297.vercel.app</a></li>
-<li><strong>Design Constraint (C2) Verification:</strong> All core UI labels, instructions, navigational prompts, and feedback are presented in natural, conversational Devanagari Hindi. An accessible language toggle (<code>🌐 English में देखें / हिंदी में देखें</code>) is provided on every lesson page for dual-language scannability.</li>
-<li><strong>Identity Token:</strong> <code>🆔 24B1297</code> rendered in the permanent layout footer across every route, and highlighted in the <code>/about</code> documentation view.</li>
+<li><strong>Design Constraint (C2) Implementation:</strong> All learner-facing navigation, prompts, instructions, and feedback are written in clear, age-appropriate Devanagari Hindi. An accessible language toggle (<code>🌐 English में देखें / हिंदी में देखें</code>) is available across lessons.</li>
+<li><strong>Input Scaffolding:</strong> An On-Screen Hindi Virtual Keyboard (<code>&lt;HindiKeyboard /&gt;</code>) allows touch-based Devanagari entry without requiring third-party device settings.</li>
+<li><strong>Multi-User Isolation:</strong> Student progress and practice scores are keyed by individual session IDs (<code>progress_&lt;userId&gt;</code>), with an explicit logout function on the dashboard.</li>
 </ul>
 <hr>
-<h2>D5 — Two Contrasting Learner Scenarios (Viva Demonstration Walkthrough)</h2>
-<h3>Scenario A: Mastered Concept Path (Correct Response)</h3>
+<h2>D5 — Two Contrasting Learner Scenarios</h2>
+<h3>Scenario A: Correct Learner Path (Mastery)</h3>
 <ol>
-<li>Learner enters name <strong>&quot;Ramu&quot;</strong> on <code>/</code> and navigates to <code>/practice</code>.</li>
-<li>On Question 1 (<code>&quot;___ेर&quot; — lion</code>), learner clicks <strong>&quot;शेर (श)&quot;</strong>.</li>
-<li><strong>System Behavior:</strong> The button glows green (<code>bg-green-100 border-green-400</code>). An encouraging feedback banner immediately appears: <em>&quot;✅ बिल्कुल सही! शेर 🦁 में &#39;श&#39; आता है।&quot;</em></li>
-<li>Clickstream telemetry records an <code>answer_correct</code> event with zero latency.</li>
-<li>In the Chat (<code>/chat</code>), learner types <em>&quot;मुझे शेर बहुत शक्तिशाली लगता है&quot;</em>.</li>
-<li>AI Tutor praises the accurate usage: <em>&quot;वाह रामू! तुमने &#39;शेर&#39; और &#39;शक्तिशाली&#39; दोनों में &#39;श&#39; का बिल्कुल सही प्रयोग किया है! 🌟&quot;</em></li>
+<li>Learner enters name <strong>&quot;रामू&quot; (Ramu)</strong> on <code>/</code> and opens <code>/practice</code>.</li>
+<li>On Question 1 (<code>&quot;___ेर&quot; — lion</code>), learner selects <strong>&quot;शेर (श)&quot;</strong>.</li>
+<li><strong>System Response:</strong> The button turns green (<code>bg-green-100 border-green-400</code>). An instant reinforcement card appears: <em>&quot;✅ बिल्कुल सही! शेर 🦁 में &#39;श&#39; आता है।&quot;</em></li>
+<li>Telemetry logs an <code>answer_correct</code> event.</li>
+<li>In <code>/chat</code>, learner types: <em>&quot;शेर जंगल का राजा है&quot;</em>.</li>
+<li><strong>AI Response:</strong> Praises accurate orthography: <em>&quot;शाबाश रामू! तुमने &#39;शेर&#39; में &#39;श&#39; का बिल्कुल सही प्रयोग किया है!&quot;</em></li>
 </ol>
-<h3>Scenario B: Dialect Misconception Path (Alternate Conception)</h3>
+<h3>Scenario B: Misconception Learner Path (Dialect Interference)</h3>
 <ol>
-<li>Learner visits <code>/practice</code> and on Question 1 selects <strong>&quot;सेर (स)&quot;</strong> (confusing it with oral Bhojpuri homophony).</li>
-<li><strong>System Behavior:</strong> The system prevents punitive red error penalization. Instead, it activates the <strong>Bhojpuri Scaffolding Prompt</strong>:<ul>
-<li>Card displays: <em>&quot;⚠️ ध्यान दो! भोजपुरी में श और स एक जैसे सुनाई देते हैं, लेकिन &#39;शेर&#39; (lion) में &#39;श&#39; आता है। &#39;सेर&#39; पुराने ज़माने की नाप है।&quot;</em></li>
+<li>Learner selects <strong>&quot;सेर (स)&quot;</strong> on Question 1 in <code>/practice</code>.</li>
+<li><strong>System Response:</strong> Non-punitive contextual scaffolding card is displayed:
+<em>&quot;⚠️ ध्यान दो! भोजपुरी में श और स एक जैसे सुनाई देते हैं, लेकिन &#39;शेर&#39; (जंगल का राजा) में &#39;श&#39; आता है। &#39;सेर&#39; पुराने ज़माने की नाप है।&quot;</em></li>
+<li>Telemetry logs a <code>misconception_detected</code> event.</li>
+<li>In <code>/chat</code>, learner types: <em>&quot;मैं आज सादी में गया था&quot;</em>.</li>
+<li><strong>System Response (Design Challenge Resolution):</strong><ul>
+<li>Displays the badge <code>🗣️ भोजपुरी बोली पहचानी गई</code> (Bhojpuri Dialect Acknowledged).</li>
+<li>Feedback validates identity while teaching standard form: <em>&quot;😊 मैं समझता हूँ! भोजपुरी में &#39;सादी&#39; बोलना बिल्कुल स्वाभाविक है। लेकिन जब हम स्कूल या परीक्षा में लिखते हैं, तो &#39;शादी&#39; (wedding 💒) लिखना चाहिए। क्या तुम इसे दोबारा लिखकर दिखाओगे?&quot;</em></li>
 </ul>
 </li>
-<li>Telemetry triggers a <code>misconception_detected</code> event (M1 logged to Firebase).</li>
-<li>In Chat (<code>/chat</code>), learner types: <em>&quot;मैं आज सादी में गया था&quot;</em>.</li>
-<li><strong>System Response:</strong> The system tags the response with a special badge <code>🗣️ भोजपुरी बोली पहचानी गई</code> (Bhojpuri Dialect Recognized) and answers:
-<em>&quot;😊 मैं समझता हूँ! भोजपुरी में ऐसे बोलना बहुत स्वाभाविक है। लेकिन जब हम स्कूल या परीक्षा में लिखते हैं, तो &#39;सादी&#39; की जगह &#39;शादी&#39; (wedding 💒) लिखना चाहिए। क्या तुम इसे दोबारा लिखकर दिखाओगे?&quot;</em></li>
 </ol>
 <hr>
 <h2>D6 — AI Functionality Specification</h2>
 <table>
 <thead>
 <tr>
-<th align="left">Component</th>
-<th align="left">Technical Implementation</th>
+<th align="left">Dimension</th>
+<th align="left">Specification</th>
 </tr>
 </thead>
 <tbody><tr>
+<td align="left"><strong>Capability</strong></td>
+<td align="left">Contextual natural language dialogue tutor (&quot;हिंदी मित्र&quot;) for Hindi orthography</td>
+</tr>
+<tr>
 <td align="left"><strong>Model</strong></td>
-<td align="left">Google Gemini 2.0 Flash via <code>@google/generative-ai</code> SDK (<code>/api/chat</code> route)</td>
+<td align="left">Google Gemini 2.0 Flash via <code>@google/generative-ai</code> SDK (<code>/api/chat</code>)</td>
 </tr>
 <tr>
-<td align="left"><strong>Input Prompt</strong></td>
-<td align="left">Structured system instruction priming the model as &quot;हिंदी मित्र&quot; with specific rules for Bhojpuri dialect acceptance vs standard spelling enforcement. User message + conversation history serialized in payload.</td>
+<td align="left"><strong>Prompt Input</strong></td>
+<td align="left">System prompt enforcing pedagogical persona, Devanagari script, age-appropriate register, and explicit distinction between regional dialect features and genuine orthographic errors. Serialized chat history included.</td>
 </tr>
 <tr>
-<td align="left"><strong>Safety / Pedagogical Guardrails</strong></td>
-<td align="left">Dual-layer regex pattern evaluation (<code>DIALECT_PATTERNS</code> &amp; <code>ERROR_PATTERNS</code>) runs client-side and server-side to guarantee that known dialectal forms (सादी, सरम, सहर, साम, बड) are never falsely tagged as illiterate errors.</td>
+<td align="left"><strong>Pre-Output Guardrails</strong></td>
+<td align="left">Regex evaluation (<code>DIALECT_PATTERNS</code> &amp; <code>ERROR_PATTERNS</code>) runs client-side and server-side to tag dialect variations (<code>सादी</code>, <code>सरम</code>, <code>सहर</code>, <code>साम</code>) with supportive metadata. Text normalizer (<code>cleanTextForSpeech</code>) strips markdown and emojis before audio vocalization.</td>
 </tr>
 <tr>
-<td align="left"><strong>Fallback Mechanism</strong></td>
-<td align="left">If network drops or the Gemini API quota is exceeded, the system automatically detects the exception and switches to <code>FALLBACK_CHAT_RESPONSES</code> with an indicator badge <code>📌 तैयार उत्तर</code>, ensuring the student&#39;s learning session is never interrupted.</td>
+<td align="left"><strong>Fallback Strategy</strong></td>
+<td align="left">In case of API failure, network latency, or quota exhaustion, the system automatically falls back to an offline rule-based matrix (<code>FALLBACK_CHAT_RESPONSES</code>) tagged with <code>📌 तैयार उत्तर</code>, guaranteeing uninterrupted user learning.</td>
 </tr>
 </tbody></table>
 <hr>
-<h2>D7 — Pedagogical Rationale &amp; Design Challenge Resolution</h2>
+<h2>D7 — Pedagogical Rationale &amp; Design Challenge Answer</h2>
+<h3>Pedagogical Foundations:</h3>
+<ol>
+<li><strong>Bloom&#39;s Revised Taxonomy:</strong> Scaffolds cognitive progression from <em>Remembering</em> (auditory letter recognition) to <em>Applying</em> (sentence completion) and <em>Analyzing</em> (distinguishing dialect phonetics from standardized spelling).</li>
+<li><strong>Cognitive Load Theory (Sweller):</strong> Extraneous load is minimized by concise bite-sized card layouts and an on-screen Devanagari keyboard. Germane load is fostered through visual and auditory contrastive pairs (ड vs ड़).</li>
+<li><strong>Sociolinguistic Asset-Based Pedagogy:</strong> Avoids linguistic deficit framing by treating the learner&#39;s native Bhojpuri as a rule-governed linguistic system rather than &quot;broken Hindi&quot;.</li>
+</ol>
 <h3>Resolution of P2 Design Challenge:</h3>
 <blockquote>
 <p><em>&quot;How will the application distinguish a learner&#39;s language errors from acceptable dialect or pronunciation variations? Show one example of each in your app.&quot;</em></p>
 </blockquote>
 <ul>
-<li><strong>Distinction Theory:</strong> Grounded in sociolinguistic constructivism (Labov, 1972), dialectal speech represents systematic grammatical and phonological regularities of a language community, not cognitive deficits.</li>
-<li><strong>Dialect Variation (Acceptable):</strong> When Ramu writes <code>&quot;सादी&quot;</code> or <code>&quot;सरम&quot;</code>, the app classifies this under phonological transfer from Bhojpuri. The system explicitly validates the learner&#39;s identity: <em>&quot;यह आपकी बोली की विशेषता है, गलत नहीं है!&quot;</em> while teaching standard target register.</li>
-<li><strong>Language Error (Correction Required):</strong> When Ramu writes <code>&quot;सक्ति&quot;</code> instead of <code>&quot;शक्ति&quot;</code> in an assessment test, or omits the nukta writing <code>&quot;सडक&quot;</code>, this represents an orthographic failure that causes spelling demerits on standardized exams. The system classifies this as an error and provides explicit articulation and phonetic mnemonics.</li>
+<li><strong>Distinction Rule:</strong> Phonological variations resulting from native Bhojpuri sound patterns (e.g. sibilant neutralization /ʃ/ $\rightarrow$ [s] in &quot;सादी&quot;, &quot;सरम&quot;) are categorized as <strong>acceptable dialect variations</strong>. The system validates the student&#39;s communicative intent while providing the standard Hindi equivalent.</li>
+<li><strong>Dialect Example:</strong> Learner writes <em>&quot;मैं सादी में गया था&quot;</em>. The system tags <code>🗣️ भोजपुरी बोली पहचानी गई</code> and explains that while common in spoken Bhojpuri, standard Hindi orthography requires &quot;शादी&quot;.</li>
+<li><strong>Language Error Example:</strong> Learner writes <em>&quot;सक्ति&quot;</em> for power or <em>&quot;सडक&quot;</em> without nukta. The system categorizes this as an <strong>orthographic error</strong> (<code>✏️ वर्तनी सुधार</code>), because it violates standard Hindi rules without regional dialect legitimacy.</li>
 </ul>
 <hr>
-<h2>D8 — Evaluation Plan &amp; Learning Analytics</h2>
+<h2>D8 — Evaluation Plan &amp; Telemetry</h2>
 <table>
 <thead>
 <tr>
@@ -240,27 +253,27 @@
 </thead>
 <tbody><tr>
 <td align="left"><strong>Outcome 1:</strong> Identify श vs स</td>
-<td align="left">Practice Tasks 1, 3, 6</td>
+<td align="left">Practice Items 1, 3, 6</td>
 <td align="left"><code>answer_correct</code> on sibilant items</td>
-<td align="left">$\ge 80%$ correct on first attempt</td>
+<td align="left">$\ge 85%$ accuracy on first attempt</td>
 </tr>
 <tr>
 <td align="left"><strong>Outcome 2:</strong> Distinguish Dialect vs Standard</td>
-<td align="left">Chat dialect conversational prompt</td>
-<td align="left"><code>dialect_acknowledged</code> frequency &amp; subsequent self-correction in chat</td>
-<td align="left">Learner produces standard form within 1 follow-up turn</td>
+<td align="left">Practice Item 3 &amp; Chat interactions</td>
+<td align="left"><code>dialect_acknowledged</code> frequency &amp; subsequent self-correction</td>
+<td align="left">Learner self-corrects dialect word to standard Hindi within 1 turn</td>
 </tr>
 <tr>
 <td align="left"><strong>Outcome 3:</strong> Apply Nukta for ड़</td>
-<td align="left">Practice Tasks 2, 5, 7</td>
+<td align="left">Practice Items 2, 5, 7</td>
 <td align="left"><code>misconception_detected</code> resolving to <code>answer_correct</code></td>
-<td align="left">Zero un-nukta errors on post-lesson quiz</td>
+<td align="left">Zero un-nukta errors on sentence completion</td>
 </tr>
 </tbody></table>
 <hr>
-<h2>AI-Use Log &amp; Reflection</h2>
-<ul>
-<li><strong>AI Tools Utilized:</strong> Claude Opus &amp; Gemini 3.8 Flash via Google Antigravity IDE.</li>
-<li><strong>Prompt Engineering Strategy:</strong> Applied iterative scaffolding—first formulating the educational design document (<code>DESIGN.md</code>), then implementing modular UI screens, speech synthesis integration, and dialect recognition logic.</li>
-<li><strong>Critical Judgement &amp; Human Oversight:</strong> The AI generated standard Next.js code; however, careful pedagogical tuning was applied to make sure Hindi Devanagari grammar terminology remained colloquial for a 12-year-old rural student rather than overly academic Sanskritized grammar.</li>
-</ul>
+<h2>AI-Use Log and Reflection</h2>
+<ol>
+<li><strong>Tools Utilized:</strong> Claude Opus &amp; Gemini 3.8 Flash via Google Antigravity IDE.</li>
+<li><strong>Workflow Progression:</strong> Formulated initial architectural plan (<code>DESIGN.md</code>), scaffolded modular Next.js routes, implemented auditory speech synthesis with audio stream fallback, integrated an on-screen Devanagari keyboard, and refined pedagogical feedback.</li>
+<li><strong>Critical Human Judgment:</strong> Corrected AI code that attempted to vocalize emojis and dashes; refined instructional copy to ensure colloquial Hindi suited for a 12-year-old rural learner rather than formal Sanskritized academic prose.</li>
+</ol>
