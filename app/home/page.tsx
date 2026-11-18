@@ -61,6 +61,14 @@ export default function HomePage() {
       color: "bg-green-500",
     },
     {
+      id: "sentences",
+      title: "पाठ ३: वाक्य में प्रयोग",
+      desc: "दैनिक जीवन के वाक्यों में श/स/ड़",
+      emoji: "📜",
+      path: "/lesson/sentences",
+      color: "bg-amber-500",
+    },
+    {
       id: "practice",
       title: "अभ्यास करो",
       desc: "MCQ, खाली जगह भरो, सही/गलत",

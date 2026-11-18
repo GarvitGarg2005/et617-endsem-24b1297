@@ -4,11 +4,13 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { LESSONS } from "@/lib/content";
 import { logPageView, logEvent } from "@/lib/clickstream";
+import { speakHindi } from "@/lib/speech";
 
 export default function DaLesson() {
   const router = useRouter();
   const lesson = LESSONS.da;
-  const [showExamples, setShowExamples] = useState(false);
+  const [showExamples, setShowExamples] = useState(true);
+  const [lang, setLang] = useState<"hi" | "en">("hi");
 
   useEffect(() => {
     logPageView(
@@ -43,24 +45,42 @@ export default function DaLesson() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-green-50 to-white p-4">
       <div className="max-w-lg mx-auto">
-        <button
-          onClick={() => router.push("/home")}
-          className="text-green-600 mb-4 flex items-center gap-1 hover:underline"
-        >
-          ← वापस जाओ
-        </button>
-
-        <div className="bg-white rounded-2xl shadow p-6 mb-4">
-          <h1 className="text-2xl font-bold text-green-700 mb-1">
-            ✏️ {lesson.title}
-          </h1>
-          <p className="text-green-500">{lesson.subtitle}</p>
+        <div className="flex justify-between items-center mb-4">
+          <button
+            onClick={() => router.push("/home")}
+            className="text-green-600 flex items-center gap-1 hover:underline text-sm font-semibold"
+          >
+            ← {lang === "hi" ? "वापस जाओ" : "Back to Home"}
+          </button>
+          <button
+            onClick={() => {
+              const next = lang === "hi" ? "en" : "hi";
+              setLang(next);
+              logEvent({
+                userId: localStorage.getItem("userId") || "anonymous",
+                sessionId: sessionStorage.getItem("sessionId") || "",
+                eventType: "language_toggle",
+                page: "lesson_da",
+                detail: `toggled_to_${next}`,
+              });
+            }}
+            className="bg-green-100 border border-green-300 text-green-800 text-xs px-3 py-1.5 rounded-full font-bold shadow-sm"
+          >
+            🌐 {lang === "hi" ? "English में देखें" : "हिंदी में देखें"}
+          </button>
         </div>
 
         <div className="bg-white rounded-2xl shadow p-6 mb-4">
-          <h2 className="font-bold text-lg text-gray-800 mb-3">📖 समझो:</h2>
-          <div className="text-gray-700 whitespace-pre-line leading-relaxed">
-            {lesson.explanation.split("\n").map((line, i) => {
+          <h1 className="text-2xl font-bold text-green-700 mb-1">
+            ✏️ {lang === "hi" ? lesson.title : lesson.titleEn}
+          </h1>
+          <p className="text-green-500 text-sm">{lang === "hi" ? lesson.subtitle : lesson.subtitleEn}</p>
+        </div>
+
+        <div className="bg-white rounded-2xl shadow p-6 mb-4">
+          <h2 className="font-bold text-lg text-gray-800 mb-3">📖 {lang === "hi" ? "समझो:" : "Concept:"}</h2>
+          <div className="text-gray-700 whitespace-pre-line leading-relaxed text-sm">
+            {(lang === "hi" ? lesson.explanation : lesson.explanationEn).split("\n").map((line, i) => {
               if (line.startsWith("**") && line.endsWith("**")) {
                 return (
                   <p key={i} className="font-bold text-green-800 mt-3">
@@ -128,9 +148,21 @@ export default function DaLesson() {
                 >
                   <p className="text-xl font-bold">{ex.word}</p>
                   <p className="text-xs text-gray-600">{ex.meaning}</p>
-                  <span className="inline-block mt-1 text-xs font-bold bg-white rounded px-2 py-0.5">
-                    {ex.letter}
-                  </span>
+                  <div className="flex justify-center items-center gap-2 mt-2">
+                    <span className="text-xs font-bold bg-white rounded px-2 py-0.5">
+                      {ex.letter}
+                    </span>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        speakHindi(ex.word);
+                      }}
+                      className="bg-green-600 hover:bg-green-700 text-white rounded-full p-1 text-xs"
+                      title="उच्चारण सुनो"
+                    >
+                      🔊
+                    </button>
+                  </div>
                 </div>
               ))}
             </div>
