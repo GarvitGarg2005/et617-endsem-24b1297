@@ -6,6 +6,7 @@ import { LESSONS } from "@/lib/content";
 import { logPageView, logEvent } from "@/lib/clickstream";
 import AudioButton from "@/components/AudioButton";
 import PhoneticsVisualizer from "@/components/PhoneticsVisualizer";
+import { recordLessonCompletion } from "@/lib/userProgress";
 
 export default function ShaSaLesson() {
   const router = useRouter();
@@ -29,13 +30,9 @@ export default function ShaSaLesson() {
   }, []);
 
   const markComplete = () => {
-    const completed = JSON.parse(localStorage.getItem("completedLessons") || "[]");
-    if (!completed.includes("sha-sa")) {
-      completed.push("sha-sa");
-      localStorage.setItem("completedLessons", JSON.stringify(completed));
-    }
+    recordLessonCompletion("sha-sa");
     logEvent({
-      userId: localStorage.getItem("userId") || "anonymous",
+      userId: localStorage.getItem("current_userId") || "anonymous",
       sessionId: sessionStorage.getItem("sessionId") || "",
       eventType: "lesson_complete",
       page: "lesson_sha_sa",

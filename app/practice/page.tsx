@@ -6,6 +6,7 @@ import { PRACTICE_QUESTIONS } from "@/lib/content";
 import { logPageView, logEvent } from "@/lib/clickstream";
 import HindiKeyboard from "@/components/HindiKeyboard";
 import { speakHindi } from "@/lib/speech";
+import { recordPracticeScore } from "@/lib/userProgress";
 
 export default function PracticePage() {
   const router = useRouter();
@@ -60,13 +61,7 @@ export default function PracticePage() {
   const nextQuestion = () => {
     if (currentQ + 1 >= questions.length) {
       setFinished(true);
-      // Save score
-      localStorage.setItem("practiceScore", JSON.stringify({ score: score, total: questions.length }));
-      const completed = JSON.parse(localStorage.getItem("completedLessons") || "[]");
-      if (!completed.includes("practice")) {
-        completed.push("practice");
-        localStorage.setItem("completedLessons", JSON.stringify(completed));
-      }
+      recordPracticeScore(score, questions.length);
       return;
     }
     setCurrentQ(currentQ + 1);

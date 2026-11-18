@@ -6,6 +6,7 @@ import { LESSONS } from "@/lib/content";
 import { logPageView, logEvent } from "@/lib/clickstream";
 import AudioButton from "@/components/AudioButton";
 import PhoneticsVisualizer from "@/components/PhoneticsVisualizer";
+import { recordLessonCompletion } from "@/lib/userProgress";
 
 export default function SentenceLesson() {
   const router = useRouter();
@@ -21,11 +22,7 @@ export default function SentenceLesson() {
   }, []);
 
   const markComplete = () => {
-    const completed = JSON.parse(localStorage.getItem("completedLessons") || "[]");
-    if (!completed.includes("sentences")) {
-      completed.push("sentences");
-      localStorage.setItem("completedLessons", JSON.stringify(completed));
-    }
+    recordLessonCompletion("sentences");
     router.push("/practice");
   };
 
