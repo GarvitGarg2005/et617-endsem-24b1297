@@ -1,24 +1,44 @@
-// Web Speech API helper for Text-to-Speech in Hindi
+// Robust Hindi Web Speech API Audio Player with audio fallback
 export function speakHindi(text: string) {
-  if (typeof window === "undefined" || !("speechSynthesis" in window)) {
-    console.warn("Speech synthesis not supported in this browser.");
-    return;
+  if (typeof window === "undefined") return;
+
+  try {
+    if ("speechSynthesis" in window) {
+      window.speechSynthesis.cancel();
+
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = "hi-IN";
+      utterance.rate = 0.8;
+      utterance.pitch = 1.0;
+
+      // Force sound on browsers where voices load asynchronously
+      const voices = window.speechSynthesis.getVoices();
+      const hindiVoice = voices.find(
+        (v) =>
+          v.lang.toLowerCase().includes("hi") ||
+          v.lang.toLowerCase().includes("in") ||
+          v.name.toLowerCase().includes("hindi")
+      );
+      if (hindiVoice) {
+        utterance.voice = hindiVoice;
+      }
+
+      window.speechSynthesis.speak(utterance);
+      return;
+    }
+  } catch (e) {
+    console.warn("SpeechSynthesis error:", e);
   }
 
-  // Cancel any ongoing speech
-  window.speechSynthesis.cancel();
-
-  const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = "hi-IN"; // Hindi India
-  utterance.rate = 0.85; // Slightly slower for clear educational articulation
-  utterance.pitch = 1.0;
-
-  // Try to find a Hindi voice if available
-  const voices = window.speechSynthesis.getVoices();
-  const hiVoice = voices.find(v => v.lang.includes("hi") || v.lang.includes("IN"));
-  if (hiVoice) {
-    utterance.voice = hiVoice;
+  // Backup fallback: Google Translate TTS audio element
+  try {
+    const audio = new Audio(
+      `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodeURIComponent(
+        text
+      )}&tl=hi&client=tw-ob`
+    );
+    audio.play().catch((err) => console.log("Audio play fallback prevented:", err));
+  } catch (err) {
+    console.error("Audio fallback failed:", err);
   }
-
-  window.speechSynthesis.speak(utterance);
 }

@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { PRACTICE_QUESTIONS } from "@/lib/content";
 import { logPageView, logEvent } from "@/lib/clickstream";
+import HindiKeyboard from "@/components/HindiKeyboard";
+import { speakHindi } from "@/lib/speech";
 
 export default function PracticePage() {
   const router = useRouter();
@@ -176,18 +178,30 @@ export default function PracticePage() {
           {/* Fill in the blank */}
           {q.type === "fill" && (
             <div className="space-y-3">
+              <HindiKeyboard
+                onInsert={(char) => setUserAnswer((prev) => prev + char)}
+                onBackspace={() => setUserAnswer((prev) => prev.slice(0, -1))}
+                onClear={() => setUserAnswer("")}
+              />
               <input
                 type="text"
                 value={userAnswer}
                 onChange={(e) => setUserAnswer(e.target.value)}
                 disabled={answered}
-                placeholder="यहाँ लिखो..."
+                placeholder="यहाँ लिखो (Type or tap keyboard above)..."
                 className="w-full px-4 py-3 border-2 border-purple-200 rounded-xl focus:border-purple-500 focus:outline-none text-lg"
               />
               {!answered && (
                 <button
                   onClick={() => {
-                    const correct = userAnswer.trim() === q.correct;
+                    const normalizedUser = userAnswer.trim().toLowerCase();
+                    const normalizedCorrect = q.correct.trim().toLowerCase();
+                    // Also accept Latin transliteration fallbacks if student types on English physical keyboard
+                    const isDirectMatch = normalizedUser === normalizedCorrect;
+                    const isTranslitMatch = 
+                      (q.correct === "पड़ोसी" && (normalizedUser === "padosi" || normalizedUser === "parosi" || normalizedUser === "padosee")) ||
+                      (q.correct === "सितारे" && (normalizedUser === "sitare" || normalizedUser === "sitaare"));
+                    const correct = isDirectMatch || isTranslitMatch;
                     handleAnswer(correct, `typed: ${userAnswer.trim()}`);
                   }}
                   disabled={!userAnswer.trim()}

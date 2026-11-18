@@ -6,6 +6,8 @@ import { useEffect, useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { logPageView, logEvent } from "@/lib/clickstream";
 import { DIALECT_PATTERNS, ERROR_PATTERNS } from "@/lib/content";
+import HindiKeyboard from "@/components/HindiKeyboard";
+import { speakHindi } from "@/lib/speech";
 
 interface ChatMessage {
   role: "user" | "assistant";
@@ -25,6 +27,7 @@ export default function ChatPage() {
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [showKeyboard, setShowKeyboard] = useState(true);
   const chatEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -199,7 +202,18 @@ export default function ChatPage() {
                     : "bg-white shadow rounded-bl-sm"
                 }`}
               >
-                <p className="whitespace-pre-line text-sm leading-relaxed">{msg.content}</p>
+                <div className="flex items-start justify-between gap-2">
+                  <p className="whitespace-pre-line text-sm leading-relaxed">{msg.content}</p>
+                  {msg.role === "assistant" && (
+                    <button
+                      onClick={() => speakHindi(msg.content)}
+                      className="text-xs bg-orange-100 hover:bg-orange-200 text-orange-800 p-1.5 rounded-full shrink-0 mt-0.5"
+                      title="आवाज़ में सुनो"
+                    >
+                      🔊
+                    </button>
+                  )}
+                </div>
                 {msg.role === "assistant" && msg.type === "dialect" && (
                   <span className="inline-block mt-2 text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">
                     🗣️ भोजपुरी बोली पहचानी गई
@@ -244,24 +258,45 @@ export default function ChatPage() {
         </div>
       </div>
 
-      {/* Input */}
+      {/* Input & Virtual Keyboard */}
       <div className="bg-white border-t p-4">
-        <div className="max-w-lg mx-auto flex gap-2">
-          <input
-            type="text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={(e) => e.key === "Enter" && sendMessage()}
-            placeholder="हिंदी में लिखो..."
-            className="flex-1 px-4 py-3 border-2 border-orange-200 rounded-xl focus:border-orange-500 focus:outline-none"
-          />
-          <button
-            onClick={sendMessage}
-            disabled={!input.trim() || isLoading}
-            className="bg-orange-600 hover:bg-orange-700 disabled:bg-gray-300 text-white font-bold px-6 py-3 rounded-xl transition-colors"
-          >
-            भेजो
-          </button>
+        <div className="max-w-lg mx-auto">
+          <div className="flex justify-between items-center mb-2">
+            <span className="text-xs text-gray-500 font-medium">हिंदी या अंग्रेज़ी में टाइप करें:</span>
+            <button
+              type="button"
+              onClick={() => setShowKeyboard(!showKeyboard)}
+              className="text-xs text-orange-700 bg-orange-100 hover:bg-orange-200 px-2 py-0.5 rounded font-bold"
+            >
+              {showKeyboard ? "⌨️ कीबोर्ड छुपाओ" : "⌨️ हिंदी कीबोर्ड दिखाओ"}
+            </button>
+          </div>
+
+          {showKeyboard && (
+            <HindiKeyboard
+              onInsert={(char) => setInput((prev) => prev + char)}
+              onBackspace={() => setInput((prev) => prev.slice(0, -1))}
+              onClear={() => setInput("")}
+            />
+          )}
+
+          <div className="flex gap-2 mt-2">
+            <input
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && sendMessage()}
+              placeholder="यहाँ लिखो (Type in Hindi or English)..."
+              className="flex-1 px-4 py-3 border-2 border-orange-200 rounded-xl focus:border-orange-500 focus:outline-none"
+            />
+            <button
+              onClick={sendMessage}
+              disabled={!input.trim() || isLoading}
+              className="bg-orange-600 hover:bg-orange-700 disabled:bg-gray-300 text-white font-bold px-6 py-3 rounded-xl transition-colors"
+            >
+              भेजो
+            </button>
+          </div>
         </div>
       </div>
     </div>
