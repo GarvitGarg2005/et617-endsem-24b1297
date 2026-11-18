@@ -1,0 +1,238 @@
+<h1>🎓 ET 617 End-Semester Examination: Complete Submission Dossier</h1>
+<p><strong>Student Roll No:</strong> 24B1297<br><strong>Date:</strong> Wednesday, 18 November 2026 (6:00 PM – 9:00 PM)<br><strong>Course:</strong> ET 617 - Educational Application Design (IIT Bombay)<br><strong>Instructor:</strong> Prof. Ramkumar Rajendran  </p>
+<hr>
+<h2>1. Exam Identity Card Verification</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="left">Chosen Option</th>
+<th align="left">Description &amp; Rationale</th>
+<th align="left">Visible in App</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>ID</strong></td>
+<td align="left"><strong>24B1297</strong></td>
+<td align="left">Roll Number Token</td>
+<td align="left">Rendered on persistent footer of all screens &amp; <code>/about</code></td>
+</tr>
+<tr>
+<td align="left"><strong>P</strong></td>
+<td align="left"><strong>P2</strong></td>
+<td align="left">Contextual Language &amp; Literacy Application</td>
+<td align="left">Natural language dialogue, dialect variation diagnosis</td>
+</tr>
+<tr>
+<td align="left"><strong>T</strong></td>
+<td align="left"><strong>T10</strong></td>
+<td align="left">Hindi for Bhojpuri-speaking learners: श/स and ड़</td>
+<td align="left">Contrasts palatal /ʃ/ vs dental /s/, and retroflex flap /ɽ/</td>
+</tr>
+<tr>
+<td align="left"><strong>L</strong></td>
+<td align="left"><strong>L1</strong></td>
+<td align="left">Class 6–8 rural govt school student, parent&#39;s phone, 30 min</td>
+<td align="left">Low cognitive load, bite-sized tasks, Devanagari keyboard</td>
+</tr>
+<tr>
+<td align="left"><strong>C</strong></td>
+<td align="left"><strong>C2</strong></td>
+<td align="left">Learner&#39;s own language (Hindi native UI + English toggle)</td>
+<td align="left">Complete Hindi instructions with bilingual switch on lessons</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>Live Hosted Application:</strong> 👉 <a href="https://et617-24b1297.vercel.app">https://et617-24b1297.vercel.app</a></li>
+<li><strong>GitHub Repository:</strong> 👉 <a href="https://github.com/GarvitGarg2005/et617-endsem-24b1297">https://github.com/GarvitGarg2005/et617-endsem-24b1297</a></li>
+</ul>
+<hr>
+<h2>2. Complete Deliverables (D1 – D8)</h2>
+<h3>D1 — Educational Problem Statement</h3>
+<p>In rural Hindi-medium schools across eastern UP and Bihar, Bhojpuri-dominant learners face severe phonological interference when acquiring standard written Hindi (खड़ी बोली). In Bhojpuri phonology, the palatal fricative /ʃ/ (<strong>श</strong>) merges into the dental fricative /s/ (<strong>स</strong>), causing phonetic homophony. Simultaneously, the retroflex flap /ɽ/ (<strong>ड़</strong>), distinguished by a bottom <em>nukta</em>, is frequently merged with the un-nukta plosive [ɖ] (<strong>ड</strong>). Consequently, students conflate words with distinct semantic meanings (e.g. शेर [lion] vs सेर [measure]) and routinely omit the nukta in common words like लड़का and सड़क. Traditional educational tools either penalize regional dialect features as illiterate errors or fail to provide auditory contrast.</p>
+<ul>
+<li><strong>Target Context:</strong> A Class 7 student accessing the application on a parent&#39;s shared budget Android phone in the evening (15–20 minutes session).</li>
+<li><strong>Measurable Learning Outcomes:</strong><ol>
+<li><em>Identify (पहचानना):</em> Given visual cues or speech prompts, the learner will correctly identify whether standard Hindi requires <strong>श</strong> or <strong>स</strong> with $\ge 85%$ accuracy.</li>
+<li><em>Distinguish (अंतर करना):</em> The learner will explain the difference between acceptable oral dialectal variations (e.g., Bhojpuri &quot;सादी&quot;) and formal standard orthography (&quot;शादी&quot;).</li>
+<li><em>Apply (प्रयोग करना):</em> The learner will apply correct nukta orthography (<strong>ड़</strong>) and sibilant consonants (<strong>श/स</strong>) in sentence construction and communicative dialogue.</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h3>D2 — Learner Persona: Ramu Kumar</h3>
+<pre><code class="language-mermaid">mindmap
+  root((Ramu Kumar - Class 7))
+    Demographics
+      Age: 12
+      School: Govt. Upper Primary School, Ballia (UP)
+      Home Tongue: Bhojpuri
+      School Language: Hindi Medium
+    Technology
+      Device: Father&#39;s shared Android phone
+      Data: 1.5 GB daily family cap
+      Usage Time: 25 min after farm work (6:30-7:00 PM)
+    Core Misconceptions
+      M1: &quot;श and स sound identical, so choice of letter does not change meaning.&quot;
+      M2: &quot;ड़ is just a decorative dot; writing लडका instead of लड़का is perfectly fine.&quot;
+    Learning Goals
+      Avoid ridicule during blackboard dictation
+      Pass Class 8 transition exam with high marks
+</code></pre>
+<ul>
+<li><strong>Prior Knowledge:</strong> Mastered primary Devanagari consonants and vowels; can read simple textbook sentences.</li>
+<li><strong>Misconception 1 (M1):</strong> Believes that because &quot;शेर&quot; (lion) and &quot;सेर&quot; (unit of measure) sound indistinguishable in his dialect, they can be used interchangeably.</li>
+<li><strong>Misconception 2 (M2):</strong> Believes the nukta diacritic in &quot;ड़&quot; is an optional stylistic accent rather than a phonemic distinction.</li>
+</ul>
+<hr>
+<h3>D3 — Educational Content &amp; Assessment Items</h3>
+<p>The app implements a full structured pedagogical sequence:</p>
+<ol>
+<li><strong>Lesson 1:</strong> श और स का अंतर (Palatal vs Dental articulation model + audio)</li>
+<li><strong>Lesson 2:</strong> ड़ को पहचानो (Visual stop vs flap contrast + nukta rule)</li>
+<li><strong>Lesson 3:</strong> वाक्य में प्रयोग (Contextual sentence usage and Bhojpuri sociolinguistic notes)</li>
+<li><strong>Interactive Practice:</strong> 8 items across 4 formats:<ul>
+<li><em>MCQ (Semantic Contrast):</em> &quot;___ेर&quot; (lion) $\rightarrow$ शेर vs सेर.</li>
+<li><em>Fill-in-the-Blank:</em> &quot;मेरे ___दोसी बहुत अच्छे हैं।&quot; (with on-screen Hindi keyboard).</li>
+<li><em>True/False:</em> &quot;शक्ति को सक्ति लिखना सही है।&quot; (diagnoses Bhojpuri phonological transfer).</li>
+<li><em>Interactive Matching:</em> Pairs words (शेर, सेब, लड़की, शाम) to definitions.</li>
+</ul>
+</li>
+<li><strong>AI Conversational Practice:</strong> Natural language dialogue with real-time dialect recognition.</li>
+</ol>
+<hr>
+<h3>D4 — Application Architecture &amp; Screen Flow</h3>
+<pre><code>[/ (Welcome)] ──&gt; [/home (Dashboard)] ──┬──&gt; [/lesson/sha-sa (Lesson 1)]
+                                        ├──&gt; [/lesson/da (Lesson 2)]
+                                        ├──&gt; [/lesson/sentences (Lesson 3)]
+                                        ├──&gt; [/practice (8 Assessed Items)]
+                                        ├──&gt; [/chat (AI Conversational Tutor)]
+                                        ├──&gt; [/results (Real-time Analytics)]
+                                        └──&gt; [/about (Identity &amp; Theories)]
+</code></pre>
+<ul>
+<li><strong>Constraint C2 Visible Implementation:</strong> All screens operate primarily in authentic Devanagari Hindi. Lessons feature an accessible <strong><code>🌐 English में देखें</code></strong> toggle.</li>
+<li><strong>Multimodal Scaffolding:</strong> Each lesson includes an embedded <strong>Interactive Phonetics Visualizer</strong> displaying tongue-palate vocal tract placement and standalone <strong>🔊 Audio Pronunciation Buttons</strong>.</li>
+<li><strong>Devanagari Input Scaffold:</strong> An integrated <strong>On-Screen Hindi Virtual Keyboard</strong> enables one-tap input on touch devices, with fallback support for Latin transliterations (e.g. typing <code>padosi</code>).</li>
+</ul>
+<hr>
+<h3>D5 — Contrasting Learner Scenarios (Viva Demonstration Walkthrough)</h3>
+<h4>Scenario A: Mastery / Correct Response Path</h4>
+<ol>
+<li>Learner enters name on <code>/</code> and opens <code>/practice</code>.</li>
+<li>Selects <strong>&quot;शेर (श)&quot;</strong> for Question 1.</li>
+<li><strong>System Behavior:</strong> Instant green highlight (<code>bg-green-100</code>), positive reinforcement banner: <em>&quot;✅ बिल्कुल सही! शेर 🦁 में &#39;श&#39; आता है।&quot;</em></li>
+<li>In <code>/chat</code>, learner types <em>&quot;शेर जंगल का राजा है&quot;</em>.</li>
+<li><strong>AI Feedback:</strong> <em>&quot;शाबाश! तुमने &#39;शेर&#39; में &#39;श&#39; का बिल्कुल सही प्रयोग किया है!&quot;</em></li>
+</ol>
+<h4>Scenario B: Misconception / Dialect Variation Path</h4>
+<ol>
+<li>Learner selects <strong>&quot;सेर (स)&quot;</strong> for Question 1 on <code>/practice</code>.</li>
+<li><strong>System Behavior:</strong> Non-punitive yellow callout: <em>&quot;⚠️ ध्यान दो! भोजपुरी में श और स एक जैसे सुनाई देते हैं, लेकिन &#39;शेर&#39; (जंगल का राजा) में &#39;श&#39; आता है। &#39;सेर&#39; पुराने ज़माने की नाप है।&quot;</em></li>
+<li>Telemetry records <code>misconception_detected</code> event.</li>
+<li>In <code>/chat</code>, learner types: <em>&quot;मैं आज सादी में गया था&quot;</em>.</li>
+<li><strong>System Behavior (Design Challenge Resolution):</strong><ul>
+<li>Displays badge: <code>🗣️ भोजपुरी बोली पहचानी गई</code> (Bhojpuri Dialect Acknowledged).</li>
+<li>Feedback: <em>&quot;😊 मैं समझता हूँ! भोजपुरी में &#39;सादी&#39; बोलना बिल्कुल स्वाभाविक है। लेकिन जब हम स्कूल या परीक्षा में लिखते हैं, तो &#39;शादी&#39; (wedding 💒) लिखना चाहिए। क्या तुम इसे &#39;श&#39; लगाकर दोबारा लिखोगे?&quot;</em></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3>D6 — AI Specification &amp; Fallback Architecture</h3>
+<pre><code>User Message ──&gt; [Pre-Filter: Dialect &amp; Error Regex Patterns]
+                       │
+       ┌───────────────┴───────────────┐
+       ▼                               ▼
+[Gemini 2.0 Flash API]       [Network / Quota Fail]
+Prompt: &quot;हिंदी मित्र&quot; tutor          │
+Strict Devanagari rules               ▼
+       │                     [Hardcoded Fallback Matrix]
+       └───────────────┬─────────────────┘
+                       ▼
+           [Clean Audio Normalizer]
+       (Strips emojis &amp; dashes for TTS)
+                       ▼
+           [Learner Response Display]
+</code></pre>
+<hr>
+<h3>D7 — Pedagogical Rationale &amp; Learning Theory Mapping</h3>
+<ol>
+<li><strong>Bloom&#39;s Revised Taxonomy:</strong> Progresses deliberately from <em>Remembering</em> (letter identification) to <em>Applying</em> (sentence completion) and <em>Analyzing</em> (dialect vs standard contrast).</li>
+<li><strong>Cognitive Load Theory (Sweller):</strong> Low extraneous load via clean card layouts; germane load enhanced through contrastive visual pairings (ड vs ड़) and auditory mnemonics (&quot;शेर शक्तिशाली है&quot;).</li>
+<li><strong>Sociolinguistic Asset-Based Pedagogy:</strong> Treats the learner&#39;s native dialect (Bhojpuri) as a legitimate linguistic system rather than &quot;broken Hindi&quot;, building self-efficacy and reducing language anxiety.</li>
+</ol>
+<hr>
+<h3>D8 — Evaluation Plan &amp; Telemetry</h3>
+<ul>
+<li><strong>Quantitative Telemetry:</strong> Firestore logging collects timestamp, user session ID, question ID, attempt count, and dialect detection triggers.</li>
+<li><strong>Rubric Target:</strong> $\ge 80%$ correct identification on post-test; zero un-nukta errors on subsequent sentence submissions.</li>
+</ul>
+<hr>
+<h2>3. Granular Git Version History (Addressing Rubric Criteria)</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Commit Hash</th>
+<th align="left">Version</th>
+<th align="left">Description &amp; Educational Milestones</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>0aa20a7</code></td>
+<td align="left"><strong>V1</strong></td>
+<td align="left">Initialized repository and committed <code>DESIGN.md</code> (0:30 checkpoint)</td>
+</tr>
+<tr>
+<td align="left"><code>f65254b</code></td>
+<td align="left"><strong>V2</strong></td>
+<td align="left">Scaffolding of all 8 core application screens, Firebase logging, and Gemini API proxy</td>
+</tr>
+<tr>
+<td align="left"><code>db29e9a</code></td>
+<td align="left"><strong>V3</strong></td>
+<td align="left">SSR hydration guard, PostCSS configuration fix, and initial production deployment</td>
+</tr>
+<tr>
+<td align="left"><code>0f9effc</code></td>
+<td align="left"><strong>V4</strong></td>
+<td align="left">Audio speech synthesis, English/Hindi language toggle, and Lesson 3 (Sentences)</td>
+</tr>
+<tr>
+<td align="left"><code>a4be8c0</code></td>
+<td align="left"><strong>V5</strong></td>
+<td align="left">Detailed evaluation report document (<code>REPORT.md</code>) matching Section 5 deliverables</td>
+</tr>
+<tr>
+<td align="left"><code>132e04a</code></td>
+<td align="left"><strong>V6</strong></td>
+<td align="left">Compiled formatted standalone HTML evaluation report (<code>REPORT.html</code>)</td>
+</tr>
+<tr>
+<td align="left"><code>6ce59cc</code></td>
+<td align="left"><strong>V7</strong></td>
+<td align="left">Integrated On-Screen Hindi Virtual Keyboard and dual-engine audio player</td>
+</tr>
+<tr>
+<td align="left"><code>9446dda</code></td>
+<td align="left"><strong>V8</strong></td>
+<td align="left">Audio text-normalization (emoji/dash stripping) and Interactive Phonetics Visualizer</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>4. Viva Voce Cheat Sheet (3 Key Questions Anticipated)</h2>
+<ol>
+<li><strong>Walkthrough:</strong> <ul>
+<li>Demonstrate Scenario A (correct answer on <code>/practice</code> Q1).</li>
+<li>Demonstrate Scenario B (select &quot;सेर&quot; on Q1 to show the Bhojpuri misconception card, then type &quot;सादी&quot; in <code>/chat</code> to show the <code>🗣️ भोजपुरी बोली पहचानी गई</code> badge).</li>
+</ul>
+</li>
+<li><strong>Why Question (Design Decision):</strong> <ul>
+<li><em>&quot;Why did you include an on-screen Hindi keyboard and dual-engine audio?&quot;</em>  </li>
+<li><strong>Answer:</strong> <em>&quot;Because our learner persona is Ramu, a Class 7 rural student on his father&#39;s phone. Most mobile web browsers lack a dedicated Devanagari input method, and since Bhojpuri merges /ʃ/ and /s/, auditory training via speech synthesis is required to distinguish vocal tract placement.&quot;</em></li>
+</ul>
+</li>
+<li><strong>Live Change Request Strategy:</strong> <ul>
+<li>Keep your local code open in VS Code. All lessons and questions are cleanly defined in <code>lib/content.ts</code>. Any text, option, or rule change requested by the examiner can be edited in seconds in <code>lib/content.ts</code>.</li>
+</ul>
+</li>
+</ol>
