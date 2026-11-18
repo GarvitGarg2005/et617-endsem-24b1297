@@ -17,14 +17,14 @@ export default function AudioButton({ text, label, className }: AudioButtonProps
     e.stopPropagation();
     setIsPlaying(true);
     speakHindi(text);
-    setTimeout(() => setIsPlaying(false), 2000);
+    setTimeout(() => setIsPlaying(false), 1500);
   };
 
   return (
     <button
       type="button"
       onClick={handlePlay}
-      className={`inline-flex items-center justify-center gap-1 active:scale-95 transition-all select-none ${
+      className={`inline-flex items-center justify-center gap-1 active:scale-95 transition-all select-none cursor-pointer ${
         className || "bg-orange-600 hover:bg-orange-700 text-white rounded-full p-2 text-xs shadow-sm"
       }`}
       title="सुनो (Audio Pronunciation)"
